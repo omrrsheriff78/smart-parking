@@ -1,0 +1,56 @@
+SmartParkingApp/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/smartparking/
+│   │   │   │   ├── MainActivity.java
+│   │   │   │   ├── ReserveActivity.java
+│   │   │   │   ├── CancelActivity.java
+│   │   │   │   └── AdminActivity.java
+│   │   │   ├── res/
+│   │   │   │   ├── layout/
+│   │   │   │   │   ├── activity_main.xml
+│   │   │   │   │   ├── activity_reserve.xml
+│   │   │   │   │   ├── activity_cancel.xml
+│   │   │   │   │   ├── activity_admin.xml
+│   │   │   │   │   └── item_slot.xml
+│   │   │   │   └── values/
+│   │   │   │       ├── colors.xml
+│   │   │   │       └── strings.xml
+│   │   │   └── AndroidManifest.xml
+│   └── build.gradle
+└── build.gradle
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.android.volley:volley:1.2.1'
+}
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smartparking">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ReserveActivity" />
+        <activity android:name=".CancelActivity" />
+        <activity android:name=".AdminActivity" />
+    </application>
+</manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="available">#4CAF50</color>  <!-- Green -->
+    <color name="occupied">#F44336</color>   <!-- Red -->
+    <color name="reserved">#FF9800</color>   <!-- Orange -->
+</resources>
